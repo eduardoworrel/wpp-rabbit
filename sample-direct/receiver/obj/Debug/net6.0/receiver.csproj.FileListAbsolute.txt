@@ -1,0 +1,17 @@
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.csproj.AssemblyReference.cache
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.GeneratedMSBuildEditorConfig.editorconfig
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.AssemblyInfoInputs.cache
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.AssemblyInfo.cs
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.csproj.CoreCompileInputs.cache
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/bin/Debug/net6.0/receiver
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/bin/Debug/net6.0/receiver.deps.json
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/bin/Debug/net6.0/receiver.runtimeconfig.json
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/bin/Debug/net6.0/receiver.dll
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/bin/Debug/net6.0/receiver.pdb
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/bin/Debug/net6.0/RabbitMQ.Client.dll
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.csproj.CopyComplete
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.dll
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/refint/receiver.dll
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.pdb
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/receiver.genruntimeconfig.cache
+/home/eduardo/Documentos/repos/aulas-rabbitmq/na-aula/sample/receiver/obj/Debug/net6.0/ref/receiver.dll

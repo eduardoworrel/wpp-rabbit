@@ -2,23 +2,23 @@
 using System.Text;
 
 var factory = new ConnectionFactory() { 
-    HostName = "143.244.137.227",
+    HostName = "164.92.158.32",
     UserName = "admin",
-    Password = "devInRabbit"
+    Password = "admin"
     };
 
 using(var connection = factory.CreateConnection()) 
 using(var channel = connection.CreateModel())
 {
-  channel.ExchangeDeclare("ew-frases",ExchangeType.Direct);
+  channel.ExchangeDeclare("ew-FalaComigoDev",ExchangeType.Direct);
   
-  channel.QueueDeclare(queue:"ew-frases",
+  channel.QueueDeclare(queue:"ew-chat",
                         durable: true,
                         exclusive: false,
                         autoDelete: false,
                         arguments: null);
 
-  channel.QueueBind(queue: "ew-frases",
-            exchange: "ew-frases",
-            routingKey: "ew-frases");
+  channel.QueueBind(queue: "ew-chat",
+            exchange: "ew-FalaComigoDev",
+            routingKey: "ew-chat");
 }

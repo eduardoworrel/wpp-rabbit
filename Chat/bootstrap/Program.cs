@@ -12,13 +12,13 @@ using(var channel = connection.CreateModel())
 {
   channel.ExchangeDeclare("ew-FalaComigoDev",ExchangeType.Direct);
   
-  channel.QueueDeclare(queue:"ew-chat",
+  channel.QueueDeclare(queue:"ab-chat",
                         durable: true,
                         exclusive: false,
                         autoDelete: false,
                         arguments: null);
 
-  channel.QueueBind(queue: "ew-chat",
+  channel.QueueBind(queue: "ab-chat",
             exchange: "ew-FalaComigoDev",
             routingKey: "ew-chat");
 }

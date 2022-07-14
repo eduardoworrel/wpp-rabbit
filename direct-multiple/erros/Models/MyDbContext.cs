@@ -14,7 +14,7 @@ namespace Infra
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;database=wppUsuarios;user=root;password=qwerty",
+            optionsBuilder.UseMySql("server=localhost;database=wppUsuariosErros;user=root;password=qwerty",
             new MySqlServerVersion(new Version(8, 0, 27)));
         }
     }

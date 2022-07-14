@@ -1,8 +1,8 @@
 version: '3'
 services:
-  dbmysql:
+  dbmysql2:
     image: mysql:5.7
-    container_name: dbmysql
+    container_name: dbmysql2
     environment:
       MYSQL_ROOT_PASSWORD: qwerty
       MYSQL_DATABASE: db
@@ -12,16 +12,15 @@ services:
       - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
-  phpmyadmin:
+  phpmyadmin2:
     image: phpmyadmin/phpmyadmin
-    container_name: pma
+    container_name: pma2
     links:
-      - dbmysql
+      - dbmysql2
     environment:
-      PMA_HOST: dbmysql
+      PMA_HOST: dbmysql2
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
-    restart: always
     ports:
       - 8081:80
 volumes:

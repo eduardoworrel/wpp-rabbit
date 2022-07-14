@@ -50,7 +50,8 @@ using(var channel = connection.CreateModel())
             };
             var corpo = JsonConvert.SerializeObject(erro);
             var usuarioBytes = Encoding.UTF8.GetBytes(corpo);
-
+            
+            Console.WriteLine("Erro");
             channel.BasicPublish(exchange: "Erros",
                             routingKey: "",
                             basicProperties: null,

@@ -10,40 +10,36 @@ var factory = new ConnectionFactory() {
 using(var connection = factory.CreateConnection()) 
 using(var channel = connection.CreateModel())
 {
-  channel.ExchangeDeclare("salvaUsuario", ExchangeType.Direct);
-  
-  channel.QueueDeclare(queue:"usuarioNormal",
+  channel.ExchangeDeclare("all",ExchangeType.Fanout);
+
+  channel.QueueDeclare(queue:"a",
                         durable: true,
                         exclusive: false,
                         autoDelete: false,
                         arguments: null);
 
-  channel.QueueDeclare(queue:"usuarioAdmin",
-                        durable: true,
-                        exclusive: false,
-                        autoDelete: false,
-                        arguments: null);
-
-  channel.QueueBind(queue: "usuarioNormal",
-            exchange: "salvaUsuario",
-            routingKey: "usuarioNormal");
-            
-  channel.QueueBind(queue: "usuarioAdmin",
-            exchange: "salvaUsuario",
-            routingKey: "usuarioAdmin");
-
-  
-  
-  channel.ExchangeDeclare("Erros", ExchangeType.Fanout);
-  
-  channel.QueueDeclare(queue:"ErrosGerais",
-                        durable: true,
-                        exclusive: false,
-                        autoDelete: false,
-                        arguments: null);
-
-  channel.QueueBind(queue: "ErrosGerais",
-            exchange: "Erros",
+  channel.QueueBind(queue: "a",
+            exchange: "all",
             routingKey: "");
 
+  channel.QueueDeclare(queue:"b",
+                        durable: true,
+                        exclusive: false,
+                        autoDelete: false,
+                        arguments: null);
+  
+    channel.QueueBind(queue: "b",
+            exchange: "all",
+            routingKey: "");
+
+
+  channel.QueueDeclare(queue:"c",
+                        durable: true,
+                        exclusive: false,
+                        autoDelete: false,
+                        arguments: null);
+
+  channel.QueueBind(queue: "c",
+            exchange: "all",
+            routingKey: "");
 }

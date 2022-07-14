@@ -23,12 +23,7 @@ using(var channel = connection.CreateModel())
         var stringJson = Encoding.UTF8.GetString(body);
         var erro = JsonConvert.DeserializeObject<ErroGeral>(stringJson) ?? new ErroGeral{};
 
-        using (var db = new MyDbContext())
-        {
-            db.ErroGeral.Add(erro);
-            db.SaveChanges();
-            Console.WriteLine("deu bom pro erro");
-        }
+        Console.WriteLine("[Erro geral]:{0}",erro.Mensagem);
      };
 
     channel.BasicConsume(queue: "ErrosGerais",

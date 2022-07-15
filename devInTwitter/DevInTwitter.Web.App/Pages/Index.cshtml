@@ -1,0 +1,69 @@
+﻿@page
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@if (SignInManager.IsSignedIn(User))
+{
+    <textarea id="conteudo"></textarea>
+    <button id="acao">Publicar</button>
+    <script>
+        const conteudo = document.querySelector("#conteudo");
+        const acao = document.querySelector("#acao");
+
+        acao.addEventListener("click",()=>{
+            const msg = conteudo.value;
+            const body = {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                    {
+                        UsuarioId: '@User.Claims.ToArray()[1].Value',
+                        Conteudo: msg,
+                    })
+            }
+            fetch('http://localhost:5030/api/Post', body)
+            .then(r =>{
+                if(r.status >= 200 && r.status < 300){
+                    atualizaPosts()
+                    window.location.reload() 
+                }
+            })
+            .catch(e=>{
+                alert(e)
+            })
+        });
+
+    </script>
+}
+<div id="publicacoes">
+
+</div>
+<script>
+
+
+    const publicacoes = document.querySelector("#publicacoes");
+
+    
+    function atualizaPosts(){
+        publicacoes.innerHTML = "";
+        fetch("http://localhost:5030/api/Post").then(a => a.json())
+        .then(resp =>{
+            for(post of resp){
+                const p = document.createElement("p");
+                p.innerHTML = `${post.usuarioId}: ${post.conteudo}
+                <small style='float:rigth'>${post.createdAt}</small>`
+                publicacoes.append(p);
+            }
+        })
+    }
+    atualizaPosts()
+</script>
